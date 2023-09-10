@@ -1,0 +1,39 @@
+.menu-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: #777777;
+  border: none;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #777777;
+  border: 1px solid #8d8989;
+  list-style-type: none;
+  min-width: 280px;
+  padding: 0px;
+  z-index: 2;
+
+  a {
+    cursor: pointer;
+  }
+
+  .item {
+    border-top: 1px solid #8d8989;
+    font-size: 18px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+  }
+
+  li:hover {
+    background-color: #2e2e2e;
+  }
+}

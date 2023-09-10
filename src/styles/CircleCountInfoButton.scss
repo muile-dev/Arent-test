@@ -1,0 +1,23 @@
+.circle-count-info-button {
+  position: relative;
+  height: 16px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -7px;
+}
+
+.count {
+  position: absolute;
+  top: -13px;
+  right: 10px;
+  background-color: #ea6c00;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+}

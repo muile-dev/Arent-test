@@ -1,0 +1,88 @@
+.my-exercise {
+  background: #414141;
+  color: #ffffff;
+  font-family: "Inter";
+
+  .title {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    .date {
+      font-size: 22px;
+      margin-left: 20px;
+    }
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    position: relative;
+    overflow-y: auto;
+    height: 264px;
+    padding-right: 10px;
+  }
+
+  .grid-item {
+    height: 40px;
+    ul {
+      li {
+        // list-style-type: circle;
+        // &::before {
+        //   content: "• ";
+        //   color: white;
+        // }
+
+        .row {
+          &::before {
+            content: "• ";
+            color: white;
+            position: absolute;
+            left: -15px;
+          }
+          .col-left {
+            p {
+              margin: 0;
+              font-size: 15px;
+              font-weight: 300;
+            }
+            span {
+              color: #ffcc21;
+            }
+          }
+          .col-right {
+            color: #ffcc21;
+          }
+          display: flex;
+          justify-content: space-between;
+          height: 40px;
+          position: relative;
+          align-items: center;
+          border-bottom: 1px solid #777777;
+        }
+      }
+    }
+    /* Apply additional styling for each grid item */
+  }
+
+  /* Define the styles for the custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+
+  /* Track styles */
+  ::-webkit-scrollbar-track {
+    background-color: #777777; /* Color of the track */
+  }
+
+  /* Handle styles */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffcc21; /* Color of the handle */
+    border-radius: 3px; /* Border radius of the handle */
+  }
+
+  /* On hover styles */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color of the handle on hover */
+  }
+}

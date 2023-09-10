@@ -1,0 +1,75 @@
+@import "./variables.scss";
+
+.MyRecord {
+  &-main-page {
+    padding: $header_padding;
+  }
+
+  .recommend-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .recommend-item {
+      width: 288px;
+      height: 288px;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffcc21;
+
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 25px;
+
+      .recommend-img-wapper {
+        width: 240px;
+        height: 240px;
+        position: absolute;
+      }
+
+      img {
+        // width: 240px;
+        // height: 240px;
+        // top: 30px;
+        // left: 20px;
+      }
+
+      .recommend-content {
+        position: relative;
+        color: #ffcc21;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          margin: 0px 0px 7px;
+        }
+
+        .btn {
+          border-radius: 2px;
+          width: 160px;
+          height: 30px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .body-record-wrapper {
+    margin: 20px 0px 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .blur-image {
+    background-size: cover;
+    filter: grayscale(100%) brightness(0.4);
+  }
+}

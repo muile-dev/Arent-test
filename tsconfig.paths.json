@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@atoms": ["src/components/atoms/*"],
+      "@constants": ["src/components/constants/*"],
+      "@organisms": ["src/components/organisms/*"],
+      "@molecules": ["src/components/molecules/*"],
+      "@templates": ["src/components/templates/*"],
+      "@pages": ["src/components/pages/*"],
+      "@utils/*": ["src/utils/*"]
+      // Add more aliases as needed
+    }
+  }
+}
