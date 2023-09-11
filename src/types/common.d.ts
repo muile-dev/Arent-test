@@ -11,7 +11,6 @@ export interface MenuItem {
   title: string;
   url: string;
   active?: boolean;
-  // submenu?: MenuItemType[];
 }
 
 interface AchievementRate {
@@ -21,9 +20,9 @@ interface AchievementRate {
 }
 
 interface BodyWeightData {
-  date: string;
-  weight: number;
-  bodyFatPercentage: number;
+  labels: string[];
+  dataset1: number[];
+  dataset2: number[];
 }
 
 interface MealHistoryEntry {

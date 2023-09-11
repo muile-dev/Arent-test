@@ -1,18 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { NavLink } from "src/types/common";
 
 import CircleCountInfoButton from "./../atoms/CircleCountInfoButton";
 
 interface LineNavProps {
   links: NavLink[];
+  handleOnNavLink: (url: string) => void;
 }
 
-const LineNav: React.FC<LineNavProps> = ({ links }) => {
+const LineNav: React.FC<LineNavProps> = ({ links, handleOnNavLink }) => {
   const isActive = (link: NavLink) => window.location.pathname === link.url;
-  const navigate = useNavigate();
 
-  const handleClick = (link: string) => navigate(link);
+  const handleClick = (link: string) => handleOnNavLink(link);
 
   const renderCounter = (count: number) => {
     return <CircleCountInfoButton count={count}></CircleCountInfoButton>;

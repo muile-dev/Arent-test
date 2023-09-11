@@ -10,13 +10,13 @@ import {
 
 import {
   achievementRate,
-  bodyWeightData,
   mealHistory,
   recommendList,
   myExerciseList,
   myDiariesList,
   columnsRecommendations,
   columnList,
+  bodyRecords,
 } from "../mockData/common";
 
 export async function fetchAchievementRate(): Promise<AchievementRate> {
@@ -25,9 +25,9 @@ export async function fetchAchievementRate(): Promise<AchievementRate> {
   });
 }
 
-export async function fetchBodyWeightData(): Promise<BodyWeightData[]> {
+export async function fetchBodyWeightData(): Promise<BodyWeightData> {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(bodyWeightData), 1000); // Simulating a delay of 1 second
+    setTimeout(() => resolve(bodyRecords), 1000); // Simulating a delay of 1 second
   });
 }
 
@@ -69,5 +69,12 @@ export async function fetchColumnsRecommendations(): Promise<Recommendation[]> {
 export async function fetchColumns(fetchMore = false): Promise<ColumnType[]> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(columnList(fetchMore)), 200);
+  });
+}
+
+
+export async function fetchBodyRecords(): Promise<BodyWeightData> {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(bodyRecords), 200);
   });
 }

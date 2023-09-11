@@ -17,7 +17,11 @@ import {
   fetchMydiaries,
 } from "../../api/common";
 
-const MyRecordPage = () => {
+type MyRecordPageProps = {
+  handleOnNavLink: (url: string) => void;
+};
+
+const MyRecordPage: React.FC<MyRecordPageProps> = ({ handleOnNavLink }) => {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [exercises, setExercises] = useState<MyExerciseType[]>([]);
   const [diaries, setDiaries] = useState<MyDiaryType[]>([]);
@@ -55,6 +59,7 @@ const MyRecordPage = () => {
   return (
     <section className="MyRecord wrapper">
       <MyRecordPageTemplate
+        handleOnNavLink={handleOnNavLink}
         recommendations={recommendations}
         navLinks={navLinks}
         dropdownLinks={dropdownLinks}

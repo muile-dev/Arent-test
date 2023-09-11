@@ -22,16 +22,20 @@ import {
 
 import {
   achievementRate as initAchievementRate,
-  bodyWeightData as initBodyWeightData,
+  bodyRecords as initBodyWeightData,
   mealHistory as initMealHistory,
 } from "../../mockData/common";
 
-const HomePage = () => {
+type HomePageProps = {
+  handleOnNavLink: (url: string) => void;
+};
+
+const HomePage: React.FC<HomePageProps> = ({ handleOnNavLink }) => {
   const [achievementRate, setAchievementRate] =
     useState<AchievementRate>(initAchievementRate);
 
   const [bodyWeightData, setBodyWeightData] =
-    useState<BodyWeightData[]>(initBodyWeightData);
+    useState<BodyWeightData>(initBodyWeightData);
 
   const [mealHistory, setMealHistory] =
     useState<MealHistoryEntry[]>(initMealHistory);
@@ -72,6 +76,7 @@ const HomePage = () => {
   return (
     <section className="HomePage wrapper page-container">
       <HomePageTemplate
+        handleOnNavLink={handleOnNavLink}
         achievementRate={achievementRate}
         bodyWeightData={bodyWeightData}
         mealHistory={mealHistory}

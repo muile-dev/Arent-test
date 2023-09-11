@@ -22,9 +22,11 @@ export interface MyRecordPageTemplateProps {
   exercises: MyExerciseType[];
   diaries: MyDiaryType[];
   onClickLoadMoreRecord: (needLoadMore: boolean) => void;
+  handleOnNavLink: (url: string) => void;
 }
 
 const MyRecordPageTemplate: FC<MyRecordPageTemplateProps> = ({
+  handleOnNavLink,
   navLinks,
   dropdownLinks,
   recommendations,
@@ -34,7 +36,11 @@ const MyRecordPageTemplate: FC<MyRecordPageTemplateProps> = ({
 }) => {
   return (
     <div className="MyRecordPageTempate main-page-container">
-      <Header navLinks={navLinks} dropdownLinks={dropdownLinks} />
+      <Header
+        navLinks={navLinks}
+        dropdownLinks={dropdownLinks}
+        handleOnNavLink={handleOnNavLink}
+      />
       <div className="MyRecord-main-page">
         <RecommendContainer recommendations={recommendations} />
         <BodyRecord />

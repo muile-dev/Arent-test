@@ -1,17 +1,19 @@
 import React, { ReactNode, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import { MenuItem } from "../../types/common";
 
 interface MenuDropdownProps {
   menuButton: ReactNode;
   items: MenuItem[];
+  handleOnNavLink: (url: string) => void;
 }
 
-const MenuDropdown: React.FC<MenuDropdownProps> = ({ menuButton, items }) => {
+const MenuDropdown: React.FC<MenuDropdownProps> = ({
+  menuButton,
+  items,
+  handleOnNavLink,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
-  const navigate = useNavigate();
 
   return (
     <div className="menu-dropdown">
@@ -22,7 +24,7 @@ const MenuDropdown: React.FC<MenuDropdownProps> = ({ menuButton, items }) => {
         <ul className="dropdown-list">
           {items.map((item, index) => (
             <li key={index} className={"item"}>
-              <a onClick={(_) => navigate(item.url)}>{item.title}</a>
+              <a onClick={(_) => handleOnNavLink(item.url)}>{item.title}</a>
             </li>
           ))}
         </ul>

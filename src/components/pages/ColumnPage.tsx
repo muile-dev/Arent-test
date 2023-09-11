@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/ColumnPage.scss";
 import ColumnPageTemplate from "../templates/ColumnPageTemplate";
 
@@ -7,7 +7,11 @@ import { Recommendation, ColumnType } from "../../types/common";
 
 import { fetchColumnsRecommendations, fetchColumns } from "../../api/common";
 
-const ColumnPage = () => {
+type ColumnPageProps = {
+  handleOnNavLink: (url: string) => void
+};
+
+const ColumnPage: React.FC<ColumnPageProps> = ({ handleOnNavLink }) => {
   const [columnRecommendations, setColumnRecommendations] = useState<
     Recommendation[]
   >([]);
@@ -38,6 +42,7 @@ const ColumnPage = () => {
   return (
     <section className="ColumnPage wrapper page-container">
       <ColumnPageTemplate
+        handleOnNavLink={handleOnNavLink}
         navLinks={navLinks}
         dropdownLinks={dropdownLinks}
         columnRecommendations={columnRecommendations}

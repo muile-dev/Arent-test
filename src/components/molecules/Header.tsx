@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
 import { NavLink, MenuItem } from "src/types/common";
 import Logo from "../assets/images/logo.svg";
 import MenuIcon from "../assets/icons/menu.svg";
@@ -10,27 +9,31 @@ import MenuDropdown from "./MenuDropdown";
 interface HeaderProps {
   navLinks: NavLink[];
   dropdownLinks: MenuItem[];
+  handleOnNavLink: (url: string) => void;
 }
 
-const Header: FC<HeaderProps> = ({ navLinks, dropdownLinks }) => {
-  const navigate = useNavigate();
+const Header: FC<HeaderProps> = ({ navLinks, dropdownLinks, handleOnNavLink }) => {
   const menuButton = <img src={MenuIcon} alt="menu button" />;
 
   return (
     <div className="header wapper">
       <div className="left-panel">
         <div className="logo">
-          <a onClick={(_) => navigate("/")}>
+          <a onClick={(_) => handleOnNavLink("/")}>
             <img alt="App-logo" src={Logo} />
           </a>
         </div>
       </div>
       <div className="right-panel">
         <nav className="header-nav">
-          <LineNav links={navLinks} />
+          <LineNav links={navLinks} handleOnNavLink={handleOnNavLink} />
         </nav>
         <div className="header-dropdown">
-          <MenuDropdown menuButton={menuButton} items={dropdownLinks} />
+          <MenuDropdown
+            menuButton={menuButton}
+            items={dropdownLinks}
+            handleOnNavLink={handleOnNavLink}
+          />
         </div>
       </div>
     </div>

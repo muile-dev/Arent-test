@@ -18,8 +18,9 @@ import {
 } from "../../types/common";
 
 export interface HomePageTempateProps {
+  handleOnNavLink: (url: string) => void;
   achievementRate: AchievementRate;
-  // bodyWeightData: BodyWeightData[];
+  bodyWeightData: BodyWeightData;
   mealHistory: MealHistoryEntry[];
   navLinks: NavLink[];
   dropdownLinks: MenuItem[];
@@ -28,46 +29,28 @@ export interface HomePageTempateProps {
 }
 
 const HomePageTempate: FC<HomePageTempateProps> = ({
+  handleOnNavLink,
   navLinks,
   dropdownLinks,
   achievementRate,
-  // bodyWeightData,
+  bodyWeightData,
   mealHistory,
   transitbuttons,
   onClickLoadMoreRecord,
 }) => {
-  const labels = [
-    "6月",
-    "7月",
-    "8月",
-    "9月",
-    "10月",
-    "11月",
-    "12月",
-    "1月",
-    "2月",
-    "3月",
-    "4月",
-    "5月",
-  ];
-  const dataset1 = [150, 100, 90, 87, 80, 81, 90, 78, 80, 91, 69, 70];
-  const dataset2 = [140, 110, 87, 80, 89, 82, 70, 90, 78, 80, 91, 78];
 
   return (
     <div className="HomePageTempate main-page-container">
       <div className="content">
-        <Header navLinks={navLinks} dropdownLinks={dropdownLinks} />
+        <Header
+          navLinks={navLinks}
+          dropdownLinks={dropdownLinks}
+          handleOnNavLink={handleOnNavLink}
+        />
         <div className="main-top">
           <AchievementRateComponent achievementRate={achievementRate} />
           <div className="body-weight-data">
-            <BodyWeightChart
-              labels={labels}
-              dataset1={dataset1}
-              dataset2={dataset2}
-            />
-            {/* <ul>
-              <img src={BodyGraphImage} alt="" />
-            </ul> */}
+            <BodyWeightChart {...bodyWeightData} />
           </div>
         </div>
         <div className="main-body">

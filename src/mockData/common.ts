@@ -37,12 +37,6 @@ export const achievementRate: AchievementRate = {
   image: AchivementRateImage,
 };
 
-export const bodyWeightData: BodyWeightData[] = [
-  { date: "2023-09-01", weight: 70, bodyFatPercentage: 20 },
-  { date: "2023-09-05", weight: 69, bodyFatPercentage: 19 },
-  { date: "2023-09-10", weight: 68, bodyFatPercentage: 18 },
-];
-
 export const mealHistory = (fetchMore = false): MealHistoryEntry[] => {
   const response = [
     { date: "2023-05-21", meal: "Morning", image: Record1 },
@@ -292,4 +286,27 @@ export const columnList = (fetchMore = false): ColumnType[] => {
   ];
 
   return fetchMore ? response.concat(response) : response;
+};
+
+export const labels = [
+  "6月",
+  "7月",
+  "8月",
+  "9月",
+  "10月",
+  "11月",
+  "12月",
+  "1月",
+  "2月",
+  "3月",
+  "4月",
+  "5月",
+];
+export const dataset1 = [150, 100, 90, 87, 80, 81, 90, 78, 80, 91, 69, 70];
+export const dataset2 = [140, 110, 87, 80, 89, 82, 70, 90, 78, 80, 91, 78];
+
+export const bodyRecords: BodyWeightData = {
+  labels,
+  dataset1,
+  dataset2,
 };

@@ -17,9 +17,11 @@ export interface ColumnPageTemplateProps {
   columnRecommendations: Recommendation[];
   columns: ColumnType[];
   onClickLoadMoreRecord: (needLoadMore: boolean) => void;
+  handleOnNavLink: (url: string) => void;
 }
 
 const ColumnPageTemplate: FC<ColumnPageTemplateProps> = ({
+  handleOnNavLink,
   navLinks,
   dropdownLinks,
   columnRecommendations,
@@ -53,7 +55,11 @@ const ColumnPageTemplate: FC<ColumnPageTemplateProps> = ({
 
   return (
     <div className="ColumnPageTemplate main-page-container">
-      <Header navLinks={navLinks} dropdownLinks={dropdownLinks} />
+      <Header
+        navLinks={navLinks}
+        dropdownLinks={dropdownLinks}
+        handleOnNavLink={handleOnNavLink}
+      />
       <div className="content">
         <div className="recommend-list grid-view">
           {columnRecommendations.map((recommend, index) =>
