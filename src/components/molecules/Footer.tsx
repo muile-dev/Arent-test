@@ -10,6 +10,7 @@ const Footer: React.FC<FooterProps> = () => {
       <ul className="footer-nav">
         {footerLinks.map((link, index) => (
           <li key={index}>
+            {/* eslint-disable-next-line */}
             <a href={link.url}>{link.label}</a>
           </li>
         ))}

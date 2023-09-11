@@ -23,7 +23,10 @@ const LineNav: React.FC<LineNavProps> = ({ links, handleOnNavLink }) => {
         <li key={index} className={`${isActive(link) ? "active" : ""}`}>
           <img src={link.icon} alt="" />
           {link.count && renderCounter(link.count)}
-          <a onClick={(_) => handleClick(link.url)}>{link.label}</a>
+          {/* eslint-disable-next-line */}
+          <a href="javascript:void(0)" onClick={(_) => handleClick(link.url)}>
+            {link.label}
+          </a>
         </li>
       ))}
     </ul>

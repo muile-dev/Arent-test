@@ -24,6 +24,7 @@ const MenuDropdown: React.FC<MenuDropdownProps> = ({
         <ul className="dropdown-list">
           {items.map((item, index) => (
             <li key={index} className={"item"}>
+              {/* eslint-disable-next-line */}
               <a onClick={(_) => handleOnNavLink(item.url)}>{item.title}</a>
             </li>
           ))}

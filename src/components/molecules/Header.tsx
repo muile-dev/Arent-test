@@ -12,14 +12,19 @@ interface HeaderProps {
   handleOnNavLink: (url: string) => void;
 }
 
-const Header: FC<HeaderProps> = ({ navLinks, dropdownLinks, handleOnNavLink }) => {
+const Header: FC<HeaderProps> = ({
+  navLinks,
+  dropdownLinks,
+  handleOnNavLink,
+}) => {
   const menuButton = <img src={MenuIcon} alt="menu button" />;
 
   return (
     <div className="header wapper">
       <div className="left-panel">
         <div className="logo">
-          <a onClick={(_) => handleOnNavLink("/")}>
+          {/* eslint-disable-next-line */}
+          <a onClick={(_) => handleOnNavLink("/")} href="javascript:void(0)">
             <img alt="App-logo" src={Logo} />
           </a>
         </div>
