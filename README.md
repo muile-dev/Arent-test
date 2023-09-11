@@ -39,3 +39,9 @@ Project we use Atomic design for this test [Link](https://atomicdesign.bradfrost
 - Organisms: are assemblies of molecules functioning together as a unit
 - Templates are page-level objects that place components into a layout and articulate the design’s underlying content structure
 - Pages are specific instances of templates that show what a UI looks like with real representative content in place
+
+### Technical used
+
+- Reactjs: 18.2.0
+- typescript: 4.9.5
+- react-chartjs-2: 5.2.0
