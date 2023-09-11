@@ -2,6 +2,8 @@
 
 This project was required by Arent test [Figma](https://www.figma.com/file/7qqT3dvv5OagaRlUFK01vB/HealthApp_1203)
 
+Demo: https://gleaming-bienenstitch-6bb30a.netlify.app
+
 ## Available Scripts
 
 In the project directory, you can run:
