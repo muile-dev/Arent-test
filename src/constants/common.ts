@@ -6,8 +6,17 @@ import InfoIcon from "../components/assets/icons/info.svg";
 
 import { MenuItem } from "src/types/common";
 
+export const ROUTES = {
+  MY_RECORD: "/my-record",
+  WEIGHT_GRAPH: "/weight-graph",
+  GOAL: "/goal",
+  SELECTED_COURSE: "/selected-course",
+  COLUMNS: "/columns",
+  SETTING: "/setting",
+};
+
 export const navLinks = [
-  { label: "自分の記録", url: "/my-record", icon: MemoIcon, active: false },
+  { label: "自分の記録", url: ROUTES.MY_RECORD, icon: MemoIcon, active: false },
   {
     label: "チャレンジ",
     url: "/challenge",
@@ -24,12 +33,12 @@ export const navLinks = [
 ];
 
 export const dropdownLinks: MenuItem[] = [
-  { title: "自分の記録", url: "/my-record" },
-  { title: "体重グラフ", url: "/weight-graph" },
-  { title: "目標", url: "/goal" },
-  { title: "選択中のコース", url: "/selected-course" },
-  { title: "コラム一覧", url: "/columns" },
-  { title: "設定", url: "/setting" },
+  { title: "自分の記録", url: ROUTES.MY_RECORD },
+  { title: "体重グラフ", url: ROUTES.WEIGHT_GRAPH },
+  { title: "目標", url: ROUTES.GOAL },
+  { title: "選択中のコース", url: ROUTES.SELECTED_COURSE },
+  { title: "コラム一覧", url: ROUTES.COLUMNS },
+  { title: "設定", url: ROUTES.SETTING },
 ];
 
 export const transitbuttons = [

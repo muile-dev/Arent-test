@@ -4,7 +4,7 @@ import Footer from "../../components/molecules/Footer";
 
 import AchievementRateComponent from "../organisms/AchievementRate";
 import MealHistory from "../organisms/MealHistory";
-import BodyGraphImage from "../assets/images/home/main_graph.svg";
+import BodyWeightChart from "../organisms/BodyWeightChart";
 import HexagonButton from "../../components/atoms/HexagonButton";
 import ScrollToTopButton from "../../components/atoms/ScrollToTopButton";
 
@@ -19,7 +19,7 @@ import {
 
 export interface HomePageTempateProps {
   achievementRate: AchievementRate;
-  bodyWeightData: BodyWeightData[];
+  // bodyWeightData: BodyWeightData[];
   mealHistory: MealHistoryEntry[];
   navLinks: NavLink[];
   dropdownLinks: MenuItem[];
@@ -31,11 +31,28 @@ const HomePageTempate: FC<HomePageTempateProps> = ({
   navLinks,
   dropdownLinks,
   achievementRate,
-  bodyWeightData,
+  // bodyWeightData,
   mealHistory,
   transitbuttons,
   onClickLoadMoreRecord,
 }) => {
+  const labels = [
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月",
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+  ];
+  const dataset1 = [150, 100, 90, 87, 80, 81, 90, 78, 80, 91, 69, 70];
+  const dataset2 = [140, 110, 87, 80, 89, 82, 70, 90, 78, 80, 91, 78];
+
   return (
     <div className="HomePageTempate main-page-container">
       <div className="content">
@@ -43,9 +60,14 @@ const HomePageTempate: FC<HomePageTempateProps> = ({
         <div className="main-top">
           <AchievementRateComponent achievementRate={achievementRate} />
           <div className="body-weight-data">
-            <ul>
+            <BodyWeightChart
+              labels={labels}
+              dataset1={dataset1}
+              dataset2={dataset2}
+            />
+            {/* <ul>
               <img src={BodyGraphImage} alt="" />
-            </ul>
+            </ul> */}
           </div>
         </div>
         <div className="main-body">

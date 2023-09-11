@@ -1,12 +1,12 @@
 .HomePageTempate {
   .main-top {
     display: grid;
-    grid-template-columns: 45% 48%;
-    grid-gap: 25px; /* Adjust the gap between the elements as needed */
+    grid-template-columns: 42.5% 1fr;
+    grid-gap: 45px; /* Adjust the gap between the elements as needed */
     background: #2e2e2e;
 
     .achivement {
-      width: 540px;
+      // width: 540px;
       position: relative;
       display: inline-block;
 
@@ -21,7 +21,8 @@
     }
 
     .body-weight-data {
-      width: 589px;
+      width: 100%;
+      height: 312px;
     }
   }
 }
